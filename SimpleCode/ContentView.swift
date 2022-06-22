@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var document: TextFile
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            EditorPaneView(content: $document.content)
+            OutputPaneView()
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
